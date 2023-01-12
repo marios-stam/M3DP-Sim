@@ -68,4 +68,5 @@ if (MSVC)
 add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
 endif(MSVC)
 
-set(CMAKE_CXX_STANDARD 14)
+# set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17) # Marios: I had to change this to 17 to make it work on my machine
