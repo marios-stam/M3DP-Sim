@@ -5,6 +5,9 @@ cmake_minimum_required(VERSION 3.1)
 
 project(SPlishSPlasH)
 
+# #  set c++ 17 standard
+# set(CMAKE_CXX_STANDARD 17)
+
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake" ${CMAKE_MODULE_PATH})
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
@@ -43,10 +46,14 @@ endif()
 find_package(Eigen3 REQUIRED)
 
 # Gazebo
-find_package(gazebo REQUIRED)
+# find_package(gazebo REQUIRED)
+find_package(Gazebo REQUIRED)
 include_directories(${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
+
+# set(CMAKE_CXX_FLAGS "-std=c++17") #1 
+ 
 
 
 ################################################################################

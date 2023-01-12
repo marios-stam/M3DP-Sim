@@ -1,6 +1,6 @@
 <sdf version="1.6">
   <world name="default">
-  <physics type="ode">
+    <physics type="ode">
       <gravity>0 0 0.0</gravity>
       <max_step_size>0.001</max_step_size>
     </physics>
@@ -33,17 +33,17 @@
         <collision name="collision">
           <pose frame="">0 0 0.016 0 -0 0</pose>
 
-           <surface>
-          <contact>
-             <collide_bitmask>0x01</collide_bitmask>
-          </contact>
-          <friction>
-            <ode>
-              <mu>10000</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
+          <surface>
+            <contact>
+              <collide_bitmask>0x01</collide_bitmask>
+            </contact>
+            <friction>
+              <ode>
+                <mu>10000</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+          </surface>
           <geometry>
             <box>
               <size>4 4 0.016</size>
@@ -70,10 +70,10 @@
 
     </model>
 
-<model name="modelName"> 
-	<static>0</static>
-	<pose>0 0 0.25</pose>
-	<link name="link">
+    <model name="modelName">
+      <static>0</static>
+      <pose>0 0 0.25</pose>
+      <link name="link">
         <collision name="collision">
           <geometry>
             <box>
@@ -81,56 +81,56 @@
             </box>
           </geometry>
         </collision>
-	<visual name="visual">
+        <visual name="visual">
           <geometry>
             <box>
               <size>0.1 0.1 0.1</size>
             </box>
           </geometry>
         </visual>
-	</link>
-    <plugin name="FluidPlugin" filename="libGazeboFluidSimulator.so">
-      <fluidConfiguration>
-        <timeStepSize>0.001</timeStepSize>
-        <particleRadius>0.01</particleRadius>
-        <simulationMethod>4</simulationMethod>
-        <gravitation>0 0 -9.81</gravitation>
-        <cflMethod>0</cflMethod>
-        <cflFactor>1</cflFactor>
-        <cflMaxTimeStepSize>0.01</cflMaxTimeStepSize>
-        <maxIterations>100</maxIterations>
-        <maxError>0.01</maxError>
-        <maxIterationsV>100</maxIterationsV>
-        <maxErrorV>0.1</maxErrorV>
-        <stiffness>50000</stiffness>
-        <exponent>7</exponent>
-        <enableDivergenceSolver>true</enableDivergenceSolver>
-        <velocityUpdateMethod>0</velocityUpdateMethod>
-        <boundaryHandlingMethod>2</boundaryHandlingMethod>
-      </fluidConfiguration>
-      <Fluid>
-	<surfaceTension>0</surfaceTension>
-	<surfaceTensionBoundary>0</surfaceTensionBoundary>
-	<surfaceTensionMethod>2</surfaceTensionMethod>
-        <viscosity>10000</viscosity>
-	<viscosityBoundary>4000000</viscosityBoundary>
-        <viscosityMethod>7</viscosityMethod>
-      </Fluid>
-      <fluidEmmiter>
-	<id>Fluid</id>
-        <width>2</width>
-        <height>2</height>
-	<translation>0. 0. 0.75</translation>
-	<rotationAxis>0 1 0</rotationAxis>
-	<rotationAngle>1.57079632679</rotationAngle>
-	<velocity>1.5</velocity>
-	<emitStartTime>0</emitStartTime>
-	<emitEndTime>100</emitEndTime>
-	<type>1</type>
-      </fluidEmmiter>
-    </plugin>
-    <plugin name="model_push" filename="libmodel_push.so"/>
-</model>
-    
-    </world>
+      </link>
+      <plugin name="FluidPlugin" filename="libGazeboFluidSimulator.so">
+        <fluidConfiguration>
+          <timeStepSize>0.001</timeStepSize>
+          <particleRadius>0.01</particleRadius>
+          <simulationMethod>4</simulationMethod>
+          <gravitation>0 0 -9.81</gravitation>
+          <cflMethod>0</cflMethod>
+          <cflFactor>1</cflFactor>
+          <cflMaxTimeStepSize>0.01</cflMaxTimeStepSize>
+          <maxIterations>100</maxIterations>
+          <maxError>0.01</maxError>
+          <maxIterationsV>100</maxIterationsV>
+          <maxErrorV>0.1</maxErrorV>
+          <stiffness>50000</stiffness>
+          <exponent>7</exponent>
+          <enableDivergenceSolver>true</enableDivergenceSolver>
+          <velocityUpdateMethod>0</velocityUpdateMethod>
+          <boundaryHandlingMethod>2</boundaryHandlingMethod>
+        </fluidConfiguration>
+        <Fluid>
+          <surfaceTension>0</surfaceTension>
+          <surfaceTensionBoundary>0</surfaceTensionBoundary>
+          <surfaceTensionMethod>2</surfaceTensionMethod>
+          <viscosity>10000</viscosity>
+          <viscosityBoundary>4000000</viscosityBoundary>
+          <viscosityMethod>7</viscosityMethod>
+        </Fluid>
+        <fluidEmmiter>
+          <id>Fluid</id>
+          <width>2</width>
+          <height>2</height>
+          <translation>0. 0. 0.75</translation>
+          <rotationAxis>0 1 0</rotationAxis>
+          <rotationAngle>1.57079632679</rotationAngle>
+          <velocity>1.5</velocity>
+          <emitStartTime>0</emitStartTime>
+          <emitEndTime>100</emitEndTime>
+          <type>1</type>
+        </fluidEmmiter>
+      </plugin>
+      <plugin name="model_push" filename="libmodel_push.so"/>
+    </model>
+
+  </world>
 </sdf>

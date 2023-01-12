@@ -16,7 +16,8 @@ bool GazeboSceneLoader::getSDFParameter(const sdf::ElementPtr sdf, T &parameter,
 	if (sdf->HasElement(parameterName))
 	{
 		result = true;
-		parameter = sdf->GetElement(parameterName)->Get<T>();
+		// parameter = sdf->GetElement(parameterName)->Get<T>();
+		parameter = defaultValue;
 	}
 	else
 	{

@@ -142,7 +142,7 @@ void FluidSimulator::RunStep()
 
 /*if (simulationSteps % 1000 == 0) {
      	const string fileName = "0frame_" + std::to_string(simulationSteps) + ".xyz";
-	 	const string path="/home/jason/fluid-engine-dev/build/bin/hybrid_liquid_sim_output/SPlisHSPlasH_out/"+fileName;   //determine where you are saving the files in
+	 	const string path="/home/marios/fluid-engine-dev/build/bin/hybrid_liquid_sim_output/SPlisHSPlasH_out/"+fileName;   //determine where you are saving the files in
 
 	 	std::ofstream outFile;
 	 	outFile.open(path, ios::out);
@@ -161,7 +161,7 @@ void FluidSimulator::RunStep()
 	 		}
 	 	}
 
- 	string command="'/home/jason/fluid-engine-dev/build/bin/particles2obj' -i '"+path+"' -r 200,200,100 -k 0.05 -m spherical -o '/home/jason/fluid-engine-dev/build/bin/hybrid_liquid_sim_output/louis_test_"+std::to_string(simulationSteps)+".obj'";
+ 	string command="'/home/marios/fluid-engine-dev/build/bin/particles2obj' -i '"+path+"' -r 200,200,100 -k 0.05 -m spherical -o '/home/marios/fluid-engine-dev/build/bin/hybrid_liquid_sim_output/louis_test_"+std::to_string(simulationSteps)+".obj'";
 
 	 	outFile.close();
 	 	system((command).c_str());
@@ -187,7 +187,7 @@ void FluidSimulator::RunStep()
 	auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(finish - start); 
 	if (simulationSteps % 100 == 0) {
 		std::ofstream outfile;
-		outfile.open("/home/jason/splisplash/timeDuration.txt", std::ios::out | std::ios::app);
+		outfile.open("/home/marios/splisplash/timeDuration.txt", std::ios::out | std::ios::app);
 		outfile << duration.count() << std::endl;
 	}
  */       
@@ -227,7 +227,7 @@ void FluidSimulator::ImportModel(string name, float size)
 
 		std::ofstream myfile;
 
-		myfile.open ("/home/jason/fluid-engine-dev/build/bin/hybrid_liquid_sim_output/louis_test_1.sdf");
+		myfile.open ("/home/marios/fluid-engine-dev/build/bin/hybrid_liquid_sim_output/louis_test_1.sdf");
 		myfile << "<?xml version='1.0'?>\n";
 		myfile << "<sdf version ='1.6'>\n";
 		myfile << "<model name='my_mesh'>\n";
@@ -237,7 +237,7 @@ void FluidSimulator::ImportModel(string name, float size)
 		myfile << "<visual name='visual'>\n";
 		myfile << "<geometry>\n";
 		myfile << "<mesh>\n";
-		myfile << "<uri>/home/jason/fluid-engine-dev/build/bin/hybrid_liquid_sim_output/louis_test_" + std::to_string(simulationSteps) + ".obj</uri>\n";
+		myfile << "<uri>/home/marios/fluid-engine-dev/build/bin/hybrid_liquid_sim_output/louis_test_" + std::to_string(simulationSteps) + ".obj</uri>\n";
 		myfile << size_str;
 		myfile << "</mesh>\n";
 		myfile << "</geometry>\n";
@@ -247,7 +247,7 @@ void FluidSimulator::ImportModel(string name, float size)
 		myfile << "</sdf>";
 		myfile.close();
 
-	string command = "gz model -m " + name + " -f '/home/jason/fluid-engine-dev/build/bin/hybrid_liquid_sim_output/louis_test_1.sdf'";
+	string command = "gz model -m " + name + " -f '/home/marios/fluid-engine-dev/build/bin/hybrid_liquid_sim_output/louis_test_1.sdf'";
 
 	system(command.c_str());
 } 

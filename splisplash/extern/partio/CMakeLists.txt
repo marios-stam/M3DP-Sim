@@ -43,7 +43,7 @@ ENDIF(WIN32)
 
 include_directories(../zlib/src)
 
-ADD_DEFINITIONS (-DPARTIO_USE_ZLIB)
+ADD_DEFINITIONS (-DPARTIO_USE_ZLIB) # uncomment to use zlib compression Marios
 
 ADD_SUBDIRECTORY (src/lib)
 
